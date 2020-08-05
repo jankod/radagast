@@ -1,0 +1,69 @@
+application {
+  config {
+  	applicationType monolith
+  	baseName Radagast
+  	serverPort 9876
+  	buildTool maven
+  	cacheProvider ehcache
+  	authenticationType jwt
+  	clientFramework angularX
+  	databaseType sql
+  	clientPackageManager yarn
+  	prodDatabaseType postgresql
+  	devDatabaseType postgresql
+  	enableHibernateCache true
+  	enableSwaggerCodegen false
+  	enableTranslation true
+  	jhiPrefix jhi
+  	nativeLanguage en
+  	packageName hr.ja.radagast
+	useSass true
+	websocket spring-websocket
+	  	
+ }
+ entities *
+}
+
+@paginate(pagination)
+entity UserProfile {	
+	firstName String
+    lastName String
+    oib String required maxlength(30)
+  
+}
+
+// BIDI OneToMany
+
+relationship OneToOne {
+	UserProfile to User
+}
+
+
+@paginate(pagination)
+entity Org {
+	name String required maxlength(200)
+    description String maxlength(4000)    
+    status OrgStatus 
+}
+
+entity Resource {
+	name String required maxlength(200)
+}
+
+enum OrgStatus {
+	OPEN, CLOSED
+}
+
+relationship OneToMany {
+   Org{resource} to Resource{org}
+}
+
+// Set pagination options
+// paginate JobHistory, Employee with infinite-scroll
+//paginate Job with pagination
+dto * with mapstruct
+// Set service options to all except few
+// service all with serviceImpl except Employee, Job
+service all with serviceClass
+// Set an angular suffix
+//angularSuffix * with mySuffix

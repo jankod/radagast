@@ -1,0 +1,9 @@
+{
+  "radagastApp": {
+    "OrgStatus": {
+      "null": "",
+      "OPEN": "OPEN",
+      "CLOSED": "CLOSED"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "radagastApp": {
+    "org": {
+      "home": {
+        "title": "Orgs",
+        "createLabel": "Créer un nouveau Org",
+        "createOrEditLabel": "Créer ou éditer un Org",
+        "notFound": "Aucun Org trouvé"
+      },
+      "created": "Un nouveau Org a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Org avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Org avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Org {{ id }} ?"
+      },
+      "detail": {
+        "title": "Org"
+      },
+      "name": "Name",
+      "description": "Description",
+      "status": "Status",
+      "resource": "Resource"
+    }
+  }
+}
